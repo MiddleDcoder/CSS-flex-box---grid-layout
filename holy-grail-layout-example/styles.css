@@ -11,33 +11,34 @@ body {
     font-size: 80%;
     padding: 1em;
     height: 100vh;
-    display: flex; /*FIRST THING TO ADD MAKE THE BODY FLEX*/
-    flex-direction: column; /* TO MAKE THEM STACK VERTICALLY*/
+    display: flex; /*1st THING TO ADD MAKE THE BODY FLEX*/
+    flex-direction: column; /*2nd  TO MAKE THEM STACK VERTICALLY*/
 }
 
 main {
     height: 100%;
-    /*display: flex;*/
+    display: flex; /*3rd to make this flex*/
 }
 
 article {
     background-color: #675BA7;
-    /*flex: 2 2 12em;*/
-    /*order: -1;*/
+    flex: 2 2 12em; /*4th flex-grow: 2; flex-shrink: 2; flex-basis: 12em;*/
+    order: -1; /*7th optional if we want to flop the sidebars to move them both at the right*/
 }
 
 nav,
 aside {
-    /*flex: 1;*/
+    flex: 1; /*5th to make this flex as well*/
 }
 
-/*@media screen and (max-width: 500px) {
+/*6th ADD SOME RESPONSIVE WHEN SCREEN LOWER*/
+@media screen and (max-width: 500px) {
     
     main {
         flex-direction: column;
     }
     
-}*/
+}
 
 h1 {
     font-size: 1.2em;
