@@ -41,3 +41,39 @@
     background-color: #F15B2A; 
     order: 1; /*by having two 1 value this 5th item will move to the last order and the 4th value will 2nd to the last order*/
 }
+
+
+/*FLEX SHRINK FACTOR*/
+/*add width:15em to the .flex-item class so that they will force to grow, this would make the items larger than the container since they are flex to fit the area evenly*/
+
+.flex-item{
+
+    width:15em;
+}
+
+.flex-item-01{
+    flex-shrink:2; /*It will remove the spaces and divided to each other flex-item*/
+     /*OR*/
+    flex-shrink:0; /*Maintain the width of this item and shrink lower to the other items*/
+}
+
+/*INITIAL SIZE - flex-basis*/
+.flex-item-01{
+    flex-basis: 10em; /*grow with 10em width and the other items is set to default*/
+}
+.flex-item{
+
+   flex-grow: 1; /*now it occupies the spaces available but the because of flex-basis: 10em; on flex-item-01 this item has the larger occupied space then divided the space left/extra space to other items*/
+}
+
+/*SHORT HAND VERSION*/
+/*FLEX: FLEX-GROW FLEX-SHRINK FLEX-BASIS;*/
+.flex-container{
+    width:50%; /*nothing works without adding width in the container*/
+}
+/*then*/
+.flex-item{
+    flex: 0 1 auto;
+    /*or test this*/
+    flex: 0 0 auto;
+}
