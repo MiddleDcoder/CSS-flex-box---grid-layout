@@ -1,0 +1,43 @@
+/*FLEX BOX CSS SNIPPETS all codes are called need to comment out a property to display what you needed*/
+
+/* FLEX CONTAINER */
+.flex-container{
+    display:flex; /*Normal*/
+    display:inline-flex; /*inline also the items container*/
+   
+    /* MAIN AXIS - FROM MAIN START TO END */
+    /*Flex Flow Direction*/
+    flex-direction: row; /*default*/
+    flex-direction: row-reverse; /*reverse*/
+    flex-direction: column; /*top to bottom direction*/
+    flex-direction: column-reverse; /*reverse*/
+
+    /* FLEX LINE WRAPPING */
+    flex-wrap: nowrap; /*default*/
+    flex-wrap: wrap; /*wrap items in rows*/
+    flex-wrap: wrap-reverse; /*reverse*/
+
+    /*FLEX FLOW COMBINATION OF DIRECTION AND WRAP*/
+    flex-flow: column wrap;
+}
+
+/*ADDING FLEX GROW FACTOR*/
+.flex-item {
+    flex-grow: 1; /*flex items will grow the item equally fill the available space*/
+}
+
+/*ADDING DISPLAY ORDER */
+/*the default value is start with 0 zero . It can be -1, 0, 1*/
+.flex-item-04 {
+    background-color: #2A9FBC;
+    order: 1; /*this will put to the end order because it is the greatest value now*/
+
+    /*trying to modify the flex-grow of this item*/
+    flex-grow: 4;
+}
+
+/*Adding another value order*/
+.flex-item-05 {
+    background-color: #F15B2A; 
+    order: 1; /*by having two 1 value this 5th item will move to the last order and the 4th value will 2nd to the last order*/
+}
