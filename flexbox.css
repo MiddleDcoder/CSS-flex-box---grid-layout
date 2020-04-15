@@ -73,7 +73,62 @@
 }
 /*then*/
 .flex-item{
-    flex: 0 1 auto;
+    flex: 0 1 auto; /*this works by setting the width to 50% so it will occupies the space of the container width:50%; making shrink*/
     /*or test this*/
-    flex: 0 0 auto;
+    flex: 0 0 auto; /*if this is applied all default but because of 50% width of the container in this is flex layout it will overflow the items to the container width 50% */
+        /*or test this*/
+    flex: 1 0 auto; /*if this is applied need to remove the width 50% of the container back to default then it making the flex layout grow and occupies the extra spaces of the container with default shrink and basis */
 }
+
+/*FLEX BOX ALIGNMENT*/
+
+/*all of the items of the given container applied using JUSTIFY-CONTENT, ALIGN-ITEMS, ALIGN-CONTENT, or individual flex items with ALIGN-SELF property*/
+
+/*JUSTIFY-CONTENT distributed by MAIN AXIS horizontally*/
+.flex-container{
+    /*row type*/
+    justify-content: flex-start; /* default value*/
+    justify-content: flex-end; /*move the the end main axis*/
+    justify-content: center; /*move to the center horizontally  */
+
+    /*column type*/
+    flex-direction: column;
+    justify-content: flex-start; /*become the cross axis, cross start*/
+    justify-content: flex-end; /*become the cross axis, cross end moved*/
+    justify-content: center; /*move to the center vertically*/
+
+    justify-content: space-between; /* divided the white space extras to each item but the white space only inside not outside, outside will fill with the item content*/
+
+    justify-content: space-around; /* works like adding margin to the left and right but the value is divided by extra space but the the main start and end have the lower space extras*/
+}
+
+/*ALIGN-ITEMS*/
+/*distributed by CROSS AXIS vertically*/
+.flex-container{
+    align-items: flex-start; /* cross axis by cross start so that it display at the top*/
+    align-items: flex-end; /*align the bottom*/
+
+    align-items: center; /*vertical align center*/
+    align-items: baseline;/*if we have text each item will line up*/
+    align-items: stretch; /*Align items vertically stretch also Default Value*/
+}
+
+/*ALIGN-SELF individually*/
+.flex-item-01{
+    align-self: flex-start;  /*align itself top*/    align-self: flex-end;  /*align itself bottom*/
+    align-self: stretch; /*stretch item itself*/  
+}
+
+/*ALIGN CONTENT*/
+.flex-container{
+align-content: flex-start; /*if the height of the items have extra space in example have bigger spaces at the bottom this align-content: flex-start; will occupied the extra space and making the top and bottom of the item center vertically and to the TOP*/
+
+align-content: flex-end; /*if the height of the items have extra space in example have bigger spaces at the bottom this align-content: flex-start; will occupied the extra space and making the top and bottom of the item center vertically and to the BOTTOM*/
+
+align-content: space-around; /*if the height of the items have extra space in example have bigger spaces at the bottom this align-content: flex-start; will occupied the extra space and making the top and bottom of the item center vertically and to the SPACE AROUND alignment*/
+
+align-content: stretch; /*DEFAULT*/
+
+
+}
+
