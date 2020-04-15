@@ -1,5 +1,9 @@
 /*FLEX BOX CSS SNIPPETS all codes are called need to comment out a property to display what you needed*/
 
+/*NOTE
+ to stack them VERTICALLY -> FLEX-DIRECTION: COLUMN; to stack them HORIZONTALLY -> FLEX-DIRECTION: ROW;
+ */
+
 /* FLEX CONTAINER */
 .flex-container{
     display:flex; /*Normal*/
@@ -57,7 +61,7 @@
     flex-shrink:0; /*Maintain the width of this item and shrink lower to the other items*/
 }
 
-/*INITIAL SIZE - flex-basis*/
+/*INITIAL SIZE - flex-basis it's like flex itself*/
 .flex-item-01{
     flex-basis: 10em; /*grow with 10em width and the other items is set to default*/
 }
@@ -129,6 +133,17 @@ align-content: space-around; /*if the height of the items have extra space in ex
 
 align-content: stretch; /*DEFAULT*/
 
-
 }
 
+
+
+/*REFER TO SCREENSHOTS REAL WORLD PROBLEMS FOLDER*/
+
+/*OLDER APPROACH*/
+/*ADD FLOAT, WIDTH, CLEAR to make two item for example in one column 50% each*/
+
+/*WITH FLEX BOX SIMPLE GIVE VALUE OF 1 -> flex:1; */
+
+/*then What if one side is longer than the other, and we want them to have the same height? We USED to have to add some sort of min height or something but not anymore FLEX BOX works the way we wanted too, even 2 3 4 columns just add flex:1;*/
+
+/*REFER TO SCREENSHOTS REAL WORLD PROBLEMS FOLDER*/

@@ -8,7 +8,6 @@ body {
 .flex-container {
 	display: flex;
 	border: solid 4px #000;
-	height: 30em;
 }
 
 .flex-item {
@@ -16,16 +15,17 @@ body {
 	font-size: 1.2em;
 	padding: 1em;
 	text-align: center;
-    opacity: 0.8;
-    flex: 0 0 auto;
 }
 
 .flex-item-01 {
 	background-color: #A62E5C;
+
 }
 
 .flex-item-02 {
 	background-color: #9BC850;
+    order: 1;
+    /*order: -1;*/
 }
 
 .flex-item-03 {
@@ -34,6 +34,25 @@ body {
 
 .flex-item-04 {
 	background-color: #2A9FBC;
+    order: 0;
+    /*order: 1;*/
+    /*order: -1;*/
+}
+
+.flex-item-05 {
+	background-color: #F15B2A;
+}
+
+.flex-item-06 {
+	background-color: #9BC850;
+}
+
+.flex-item-07 {
+	background-color: #A62E5C;
+}
+
+.flex-item-08 {
+	background-color: #F15B2A;
 }
 
 .flex-item strong {
