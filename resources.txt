@@ -1,0 +1,11 @@
+Flexbugs
+https://github.com/philipwalton/flexbugs
+Get the Polyfill
+https://github.com/FremyCompany/css-grid-polyfill
+rachelandrew.co.uk
+@rachelandrew
+http://csslayout.news/
+https://gridbyexample.com
+https://scotch.io/tutorials/a-visual-guid-to-css3-flexbox-properties
+https://philipwalton.github.io/solved-by-flexbox/
+https://css-tricks.com/snippets/css/a-guide-to/flexbox/

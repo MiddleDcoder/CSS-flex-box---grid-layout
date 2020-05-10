@@ -1,0 +1,243 @@
+/*GRID LAYOUT*/
+
+
+/*Adding the Grid Layout*/
+.grid-container {
+    /*display: grid*/;
+    /*or*/
+    /*display: inline-grid;*/
+}
+
+/*Defining grid-template-columns and grid-template-rows*/
+.grid-container {
+	grid-template-columns: 6em 1em 6em 1em 6em 1em 6em; /*4 columns 6em wide and 1em gutter width*/
+}
+
+/*Placing Grid Items*/
+
+/*
+grid-column-start: 1;
+grid-column-end: 2;
+grid-row-start: 1;
+grid-row-start: 2;
+*/
+
+
+/*
+for example
+*
+/*first item with this container*/
+.grid-container {
+	grid-template-columns: 6em 1em 6em 1em 6em 1em 6em; /*4 columns 6em wide and 1em gutter width*/
+}
+
+.grid-item {
+	grid-column-start: 1;
+    grid-column-end: 2;
+	
+}
+/*this will point to gutter 1em*/
+.grid-item {
+
+	grid-column-start: 2;
+    grid-column-end: 3;
+	
+}
+/*the 3rd column but the 2nd column in view because the 2-3 is the gutter*/
+.grid-item {
+	grid-column-start: 3;
+    grid-column-end: 4;
+	
+}
+/*this will contain the 3-6 (6em 1em 6em 1em)*/
+.grid-item {
+	 grid-column-start: 3;
+    grid-column-end: 6;
+	}	       
+
+/*Grid Template Rows*/
+
+/*first item with this container*/
+.grid-container {
+	grid-template-columns: 6em 1em 6em 1em 6em 1em 6em; /*4 columns 6em wide and 1em gutter width*/
+	    grid-template-rows: 6em 1em 6em; /*Adding the template-rows*/
+}
+
+/*adding the grid-row*/
+.grid-item-01 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.grid-item-02 {
+	background-color: #9BC850;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.grid-item-03 {
+	background-color: #675BA7;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.grid-item-04 {
+	background-color: #2A9FBC;
+    grid-column-start: 7;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.grid-item-05 {
+	background-color: #F15B2A;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.grid-item-06 {
+	background-color: #675BA7;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.grid-item-07 {
+	background-color: #A62E5C;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+/*Auto Grid Features*/
+.grid-container {
+    grid-auto-flow: column; /*they will flow top to bottom and left to right*/
+}
+
+/*Grid Shorthand*/
+.grid-container {
+    grid: 10em 6em 6em 6em / 6em 6em; /* grid: column column / row row; */
+}
+
+/* grid-row: row-start / row-end; */
+/* grid-column: column-start / column-end; */
+.grid-item {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+}
+/* very shorthand of start & end */
+/* grid-area: row-start / column-start / row-end / column-end; */
+.grid-item {
+   grid-area: 2 / 2 / 3 / 4;
+}
+/* span keyword - how our grid items span across grid lines. */
+.grid-item {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+}
+/* grid-template-columns: repeat(4, 6em)*/
+.grid-container {
+    grid-template-columns: 6em repeat(3, 1em 6em);
+}
+/*Naming Grid Lines & Grid Areas*/
+/* grid-template-columns: [name1] [name2] [name 3];
+grid-template-rows: [name1] [name2] [name 3];  */
+.grid-container {
+    display: grid;
+    height: cacl(100vh - 2em);
+    grid: [main-content-start] 1fr
+          [main-content-end] 1em
+          [sidebar-start] 25%
+          [sidebar-end] / 6em 1em 1fr; 
+}
+.grid-item-content {
+    grid-column: main-content-start / main-content-end;
+}
+.grid-item-sidebar {
+    grid-column: sidebar-start / sidebar-end;
+}
+.grid-item-header{   
+    grid-column: main-content-start / sidebar-end;
+}
+/*example image galley refer to CLIP7 - 02*/
+.grid-container {
+    display:grid;
+    grid: [image-column] 1fr repeat(3, [gutter] 1em [image-column] 1fr)
+          [image-column-end] / 
+          5.4em 1em [image-row] 1fr
+          repeat(2, [gutter] 1em [image-row] 1fr);
+}
+
+.grid-item-header {
+    background-color: #A62E5C;
+    color: #fff;
+    grid-column: image-column 1 / image-column-end;
+    grid-row: 1 / 2;
+}
+.grid-item-image-01 {
+    grid-column: image-column 1 / gutter 1;
+    grid-row: image-row 1 / gutter 1;
+}
+.grid-item-image-03 {
+    grid-column: image-column 3 / gutter 3;
+    grid-row: image-row 1 / gutter 1;
+}
+.grid-item-image-05 {
+    grid-column: image-column 1 / gutter 1;
+    grid-row: image-row 2 / gutter 2;
+}
+.grid-item-image-07 {
+    grid-column: image-column 3 / gutter 3;
+    grid-row: image-row 2 / gutter 2;
+}
+.grid-item-image-09 {
+    grid-column: image-column 1 / gutter 1;
+    grid-row: image-row 3 / gutter 3;
+}
+.grid-item-image-11 {
+    grid-column: image-column 3 / gutter 3;
+    grid-row: image-row 3 / gutter 3;
+}
+.grid-item {
+    box-sizing: border-box;
+	font-size: 1.2em;
+	padding: 1em;
+    overflow: hidden;
+	text-align: center;
+}
+
+.grid-item-image {
+    border: solid 1px #ccc;
+}
+/*Name Grid Areas refer to ClIP 07 - 02*/
+img {
+    height: auto;
+    width: 100%;
+}
+.media-item-title {
+    grid-area: title;
+}
+.media-item-thumb {
+    grid-area: thumbnail;
+}
+.media-item-content {
+    grid-area: content;
+}
+.media-container {
+    display: grid;
+    grid: 8em 1em 1fr / auto 1em auto;
+    grid-template-areas: "title title title"
+                         ". . ."
+                         "thumbnail . content";
+}
+/* fr unit - size grid rows and columns based on a fraction of available space */
